@@ -19,8 +19,8 @@ jobs:
         uses: paulhatch/semantic-version@v4.0.3
         with:
           tag_prefix: "v"
-          major_pattern: "/^BREAKING CHANGE:"
-          minor_pattern: "/^feat:"
+          major_pattern: "/^BREAKING CHANGE:/"
+          minor_pattern: "/^feat:/"
           format: "${major}.${minor}.${patch}"
 
       - name: Print Output
@@ -33,6 +33,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.versioning.outputs.version }}',
+              ref: 'refs/tags/${{ steps.versioning.outputs.version_tag }}',
               sha: context.sha
             })
