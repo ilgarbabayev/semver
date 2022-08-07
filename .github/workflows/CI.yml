@@ -34,4 +34,3 @@ jobs:
               ref: 'refs/tags/${{ steps.versioning.outputs.version }}',
               sha: context.sha
             })
-          
