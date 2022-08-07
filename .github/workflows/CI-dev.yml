@@ -21,7 +21,7 @@ jobs:
           tag_prefix: "v"
           major_pattern: "/^BREAKING CHANGE:"
           minor_pattern: "/^feat:"
-          format: "${major}.${minor}.${patch}-prerelease.${increment}"
+          format: "${major}.${minor}.${patch}"
 
       - name: Print Output
         run: echo 'version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
