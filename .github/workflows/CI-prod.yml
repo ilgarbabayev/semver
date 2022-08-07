@@ -2,7 +2,7 @@ name: CI PROD
 on:
   push:
     branches:
-      - prod
+      - main
       
 jobs:
   build:
