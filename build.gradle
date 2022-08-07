@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'org.example'
-project.version = scmVersion.version
+version = scmVersion.version
 
 repositories {
     mavenCentral()
