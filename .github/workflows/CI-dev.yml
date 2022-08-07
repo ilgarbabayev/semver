@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,11 +21,7 @@ jobs:
           short_tags: false
           major_pattern: "/^BREAKING CHANGE:/"
           minor_pattern: "/^feat:/"
-          format: "${major}.${minor}.${patch}"
-
-      - name: Print Output
-#        if: startsWith(${{ github.event.head_commit.message }}, 'BREAKING CHANGE:')
-        run: echo 'version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
+          format: "${major}.${minor}.${patch}-SNAPSHOT"
 
       - name: Create Tag
         uses: actions/github-script@v5
