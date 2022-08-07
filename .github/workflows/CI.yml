@@ -16,13 +16,12 @@ jobs:
         
       - name: Semantic Versioning
         id: versioning
-        uses: paulhatch/semantic-version@v5.0.0-alpha2
+        uses: paulhatch/semantic-version@v4.0.3
         with:
-          branch: dev
           tag_prefix: "v"
           major_pattern: "BREAKING CHANGE:"
           minor_pattern: "feat:"
-          format: "${major}.${minor}.${patch}-SNAPSHOT.${increment}"
+          format: "${major}.${minor}.${patch}-prerelease.${increment}"
 
       - name: Print Output
         run: echo 'version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
