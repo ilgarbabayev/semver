@@ -16,7 +16,7 @@ jobs:
         
       - name: Semantic Versioning
         id: versioning
-        uses: paulhatch/semantic-version@v4.0.3
+        uses: paulhatch/semantic-version@v5.0.0-alpha2
         with:
           branch: dev
           tag_prefix: "v"
@@ -26,7 +26,6 @@ jobs:
 
       - name: Print Output
         run: echo 'version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
-
 
       - name: Create Tag
         uses: actions/github-script@v5
