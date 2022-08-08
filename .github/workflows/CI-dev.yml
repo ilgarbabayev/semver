@@ -24,7 +24,7 @@ jobs:
           format: "${major}.${minor}.${patch}"
 
       - name: Print Output
-        run: echo 'version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
+        run: echo 'dev version is ${{ steps.versioning.outputs.version }}  \n  tag version is ${{ steps.versioning.outputs.version_tag }}'
 
       - name: Create Tag
         uses: actions/github-script@v5
